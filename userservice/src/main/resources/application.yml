@@ -12,7 +12,7 @@ spring:
 
 eureka:
   service-url:
-      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/  #注册到eureka
+      defaultZone: http://localhost:8761/eureka/  #注册到eureka
   instance:
     prefer-ip-address: true
 

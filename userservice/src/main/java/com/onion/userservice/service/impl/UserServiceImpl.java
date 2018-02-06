@@ -1,9 +1,10 @@
-package com.onion.userservice.service;
+package com.onion.userservice.service.impl;
 
-import com.onion.api.userapi.UserService;
+import com.onion.api.userapi.UserServiceApi;
 import com.onion.pojo.user.Author;
 import com.onion.pojo.user.User;
 import com.onion.userservice.mapper.UserMapper;
+import com.onion.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +20,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
-//    @Autowired
-//    DiscoveryClient discoveryClient;
-
     @Override
     public String getName() {
         return author.getName();
@@ -31,11 +29,6 @@ public class UserServiceImpl implements UserService {
     public User findUserById(int id) {
         return userMapper.findUserById(id);
     }
-//
-//    @Override
-//    public MetaData getMetaData() {
-//        return null;
-//    }
 
 
 }

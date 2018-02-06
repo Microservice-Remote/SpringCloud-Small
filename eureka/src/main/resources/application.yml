@@ -1,15 +1,19 @@
 spring:
+  profiles:
+    active: dev
   application:
       name: eureka
 ---
 spring:
-  profiles: peer1
+  profiles: dev
 eureka:
   instance:
-    hostname: peer1
+    hostname: localhost
   client:
     service-url:
-      defaultZone: http://peer2:8762/eureka/
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: false
+    allow-redirects: false
 server:
   port: 8761
 

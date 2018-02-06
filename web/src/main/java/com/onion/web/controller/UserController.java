@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by OnionMac on 2018/2/6.
  */
 @RestController
-@RequestMapping("user")
+@RequestMapping("web-user")
 public class UserController {
 
     @Autowired
