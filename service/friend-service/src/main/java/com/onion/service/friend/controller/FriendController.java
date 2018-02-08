@@ -4,6 +4,7 @@ import com.onion.api.friendapi.FriendServiceApi;
 import com.onion.pojo.user.Friend;
 import com.onion.service.friend.service.FriendService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class FriendController implements FriendServiceApi{
 
     @Autowired
+    private DiscoveryClient discoveryClient;
+
+    @Autowired
     FriendService friendService;
 
     @Override
     public Friend findFriendById(@PathVariable("id") int id) {
+        System.out.println("端口"+discoveryClient.getLocalServiceInstance().getPort());
         return friendService.findFriendById(id);
     }
 }

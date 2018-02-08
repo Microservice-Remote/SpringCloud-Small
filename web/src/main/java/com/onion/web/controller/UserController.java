@@ -29,7 +29,7 @@ public class UserController {
 
     @GetMapping("/getName")
     public String getName(){
-        return userService.getName();
+        return author.getName();
     }
 
     @GetMapping("/getUser/{id}")
