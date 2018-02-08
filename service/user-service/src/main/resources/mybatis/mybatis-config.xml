@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 全局映射器启用缓存 -->
+        <setting name="cacheEnabled" value="false"/>
+        <!-- 查询时，关闭关联对象即时加载以提高性能 -->
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <!--指定应如何自动映射列到字段或属性。 NONE 表示取消自动映射；PARTIAL 只会自动映射没有定义嵌套结果集映射的结果集。 FULL 会自动映射任意复杂的结果集（无论是否嵌套）。-->
+        <setting name="autoMappingBehavior" value="FULL"/>
+        <!-- 支持java驼峰命名与DB下划线映射 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!-- <typeHandlers>
+         <typeHandler handler="com.jhh.pay.center.model.EnumTypeHandler"
+                      javaType="com.jhh.pay.center.model.OrderType"/>
+         <typeHandler handler="com.jhh.pay.center.model.EnumTypeHandler"
+                      javaType="com.jhh.pay.center.model.OrderState"/>
+         <typeHandler handler="com.jhh.pay.center.model.EnumTypeHandler"
+                      javaType="com.jhh.pay.center.model.NotifyState"/>
+     </typeHandlers>-->
+ </configuration>

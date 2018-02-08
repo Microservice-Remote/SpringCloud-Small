@@ -11,12 +11,18 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://zhangqi:1994@localhost:8761/eureka/
     fetch-registry: false
     allow-redirects: false
 server:
   port: 8761
 
+security:
+  basic:
+    enabled: true
+  user:
+    password: 1994
+    name: zhangqi
 ---
 spring:
   profiles: peer2
