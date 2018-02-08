@@ -11,9 +11,9 @@
 	<name>small</name>
 	<description>Demo project for Spring Boot</description>
 	<modules>
+		<module>eureka</module>
 		<module>pojo</module>
 		<module>api</module>
-		<module>eureka</module>
 		<module>service</module>
 		<module>web</module>
 	</modules>
