@@ -19,7 +19,11 @@ feign:
   httpclient:
     connection-timeout: 100000
   hystrix:
-    enable: false
+    enabled: true
+
+hystrix:
+  metrics:
+    enabled: true
 
 security:
   basic:
@@ -27,3 +31,4 @@ security:
 
 author:
   name: 张琦
+

@@ -1,22 +1,19 @@
 package com.onion.web.hystrix;
 
 import com.onion.pojo.user.Friend;
-import com.onion.web.api.FriendApi;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * Created by OnionMac on 2018/2/11.
  */
-public class FriendHystrix implements FriendApi {
+public class FriendHystrix {
 
-    @Override
-    public Friend findFriendById(int id) {
-        Friend friend = new Friend();
-        friend.setId(222+id);
-        return friend;
+    Friend findFriendById(@PathVariable("id") int id){
+        return new Friend();
     }
 
-    @Override
-    public String find(int id) {
-        return null;
+    String find(@PathVariable("id") int id)
+    {
+        return "1";
     }
 }
