@@ -1,4 +1,4 @@
-package con.onion.zuul;
+package com.onion.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

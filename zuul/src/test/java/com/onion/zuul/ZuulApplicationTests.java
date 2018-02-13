@@ -1,4 +1,4 @@
-package con.onion.zuul;
+package com.onion.zuul;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
