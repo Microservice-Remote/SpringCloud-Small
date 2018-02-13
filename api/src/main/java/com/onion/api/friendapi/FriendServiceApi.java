@@ -14,4 +14,7 @@ public interface FriendServiceApi {
     @RequestMapping(value = "/getFriend/{id}",method = RequestMethod.GET)
     Friend findFriendById(@PathVariable("id") int id);
 
+    @RequestMapping(value = "/find/{id}",method = RequestMethod.GET)
+    String find(@PathVariable("id") int id);
+
 }

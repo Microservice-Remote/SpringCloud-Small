@@ -1,4 +1,4 @@
-package com.onion.web.api;
+package com.onion.service.friend.api;
 
 import com.onion.api.userapi.UserServiceApi;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -6,8 +6,7 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 /**
  * Created by OnionMac on 2018/2/8.
  */
-@FeignClient(value = "user-service")
+@FeignClient("user-service")
 public interface UserApi extends UserServiceApi{
-
 
 }

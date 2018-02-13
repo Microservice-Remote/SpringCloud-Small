@@ -30,7 +30,6 @@ public class UserController implements UserServiceApi {
     public User findUserById(@PathVariable("id") int id) {
         User userById = userService.findUserById(id);
         Friend friendById = friendApi.findFriendById(id);
-        System.out.println(friendById.getCreateDate());
         return userById;
     }
 

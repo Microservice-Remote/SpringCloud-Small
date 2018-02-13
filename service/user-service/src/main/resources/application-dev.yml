@@ -16,7 +16,11 @@ eureka:
       defaultZone: http://zhangqi:1994@localhost:8761/eureka/  #注册到eureka
     instance:
       prefer-ip-address: true
-
+      #ip-address: 116.196.111.10
+hystrix:
+  metrics:
+    enabled: true
+    polling-interval-ms: 120000
 security:
   basic:
     enabled: false
@@ -27,7 +31,10 @@ mybatis:
   type-aliases-package: com.onion.pojo
 
 server:
-  port: 8035
+  port: 8050
 
 author:
   name: dev
+logging:
+  level:
+    com.onion.service.user.api.FriendApi: debug

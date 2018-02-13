@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhangqi:1994@localhost:8761/eureka/  #注册到eureka
+    instance:
+      prefer-ip-address: true
+      #ip-address: 116.196.111.10
+zuul:
+  routes:
+    zhangqi:
+      path: /zhangqi/**
+      serviceId: user-service
+    api-web:
+      path: /api-web/**
+      serviceId: web
+    api-b:
+      path: /api-b/**
+      serviceId: friend-service
+
+security:
+  basic:
+    enabled: false
+server:
+  port: 8010
+
+

@@ -1,9 +1,6 @@
 spring:
   application:
       name: eureka
----
-spring:
-  profiles: dev
 eureka:
   instance:
     hostname: localhost
@@ -12,6 +9,9 @@ eureka:
       defaultZone: http://zhangqi:1994@localhost:8761/eureka/
     fetch-registry: false
     allow-redirects: false
+    register-with-eureka: false
+  server:
+    enable-self-preservation: true
 server:
   port: 8761
 

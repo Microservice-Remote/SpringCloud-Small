@@ -15,6 +15,12 @@ eureka:
     instance:
       prefer-ip-address: true
 
+feign:
+  httpclient:
+    connection-timeout: 100000
+  hystrix:
+    enable: false
+
 security:
   basic:
     enabled: false

@@ -1,6 +1,5 @@
 package com.onion.service.user.service.impl;
 
-import com.onion.pojo.user.Author;
 import com.onion.pojo.user.User;
 import com.onion.service.user.mapper.UserMapper;
 import com.onion.service.user.service.UserService;
@@ -14,14 +13,11 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    Author author;
-
-    @Autowired
     UserMapper userMapper;
 
     @Override
     public String getName() {
-        return author.getName();
+        return "user-service";
     }
 
     @Override
