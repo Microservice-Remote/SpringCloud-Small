@@ -24,6 +24,9 @@ zuul:
 security:
   basic:
     enabled: false
+  user:
+    name: zuul
+    password: zhangqi
 server:
   port: 8010
 
