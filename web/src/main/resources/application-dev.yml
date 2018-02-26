@@ -1,6 +1,12 @@
 spring:
   application:
       name: web
+  retrofit:
+    baseUrl: https://uhuishou.ronghezulin.com/loan-app/
+  okhttp:
+    connTimeOut: 11000
+    netInterceptor[0]: com.onion.web.Interceptor.HttpLogger
+    interceptor[0]: com.onion.web.Interceptor.HeaderInterceptor
 
 server:
   port: 8033
