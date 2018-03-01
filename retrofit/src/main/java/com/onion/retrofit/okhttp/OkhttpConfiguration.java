@@ -50,8 +50,8 @@ public class OkhttpConfiguration {
     }
 
     private Interceptor getInterceptor(String clazzName) {
-
         try {
+            // clazzName  是com.onion.web.interceptor.xxx
             Class<?> aClass = Class.forName(clazzName);
             Object childO = aClass.newInstance();
             if(childO instanceof Interceptor){

@@ -4,8 +4,10 @@ import com.onion.api.userapi.UserServiceApi;
 import com.onion.pojo.user.Friend;
 import com.onion.pojo.user.User;
 import com.onion.service.user.api.FriendApi;
+import com.onion.service.user.service.MailService;
 import com.onion.service.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +23,9 @@ public class UserController implements UserServiceApi {
     @Autowired
     FriendApi friendApi;
 
+    @Autowired
+    MailService mailService;
+
     @Override
     public String getName(){
         return userService.getName();
@@ -33,6 +38,10 @@ public class UserController implements UserServiceApi {
         return userById;
     }
 
-
+    @GetMapping("/user/send")
+    public String send(String title,String content,String email){
+        mailService.sendMail(title,content,email);
+        return "同步发送成功";
+    }
 
 }

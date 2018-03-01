@@ -9,6 +9,17 @@ spring:
     password: 1994
     type: org.apache.tomcat.jdbc.pool.DataSource
     driver-class-name: com.mysql.jdbc.Driver
+  mail:
+    host: smtp.163.com
+    username: 13270665702@163.com
+    password: 759308541aa
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 
 eureka:
   client:

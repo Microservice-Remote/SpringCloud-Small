@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Created by OnionMac on 2018/2/6.
  */
-@RequestMapping("user")
 public interface UserServiceApi {
 
     @GetMapping("user/getName")
