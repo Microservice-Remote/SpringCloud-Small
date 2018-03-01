@@ -36,7 +36,7 @@ public class FriendController implements FriendServiceApi{
 
     @Override
     public String find(@PathVariable("id") int id) {
-        return restTemplate.getForObject("http://localhost:8040/user/getName",String.class);
+        return restTemplate.getForObject("http://localhost:8050/user/getName",String.class);
     }
 
 }

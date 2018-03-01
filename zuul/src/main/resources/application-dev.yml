@@ -8,6 +8,7 @@ eureka:
       defaultZone: http://zhangqi:1994@localhost:8761/eureka/  #注册到eureka
     instance:
       prefer-ip-address: true
+
       #ip-address: 116.196.111.10
 zuul:
   routes:

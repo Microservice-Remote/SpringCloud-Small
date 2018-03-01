@@ -1,5 +1,8 @@
 package com.onion.service.friend;
 
+import com.alibaba.fastjson.JSONObject;
+import com.onion.pojo.Content;
+import com.onion.pojo.Req;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
