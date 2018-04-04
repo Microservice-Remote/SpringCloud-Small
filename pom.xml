@@ -11,6 +11,8 @@
 	<name>small</name>
 	<description>Demo project for Spring Boot</description>
 	<modules>
+		<module>util</module>
+		<module>admin</module>
 		<module>retrofit</module>
 		<module>eureka</module>
 		<module>pojo</module>
@@ -18,7 +20,7 @@
 		<module>service</module>
 		<module>web</module>
 		<module>zuul</module>
-	</modules>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

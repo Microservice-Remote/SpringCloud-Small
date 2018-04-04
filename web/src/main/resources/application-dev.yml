@@ -5,9 +5,16 @@ spring:
     baseUrl: https://uhuishou.ronghezulin.com/loan-app/
   okhttp:
     connTimeOut: 11000
-    netInterceptor[0]: com.onion.web.Interceptor.HttpLogger
-    interceptor[0]: com.onion.web.Interceptor.HeaderInterceptor
+#  boot:
+#    admin:
+#      url: http://localhost:8060
+#      username: zhangqi
+#      password: 1994
+#      client:
+#        name: web
 
+#    netInterceptor: com.onion.retrofit.okhttp.OkhttpProperties
+#    interceptor: com.onion.web.Interceptor.HeaderInterceptor
 server:
   port: 8033
   compression:
@@ -24,17 +31,26 @@ eureka:
 feign:
   httpclient:
     connection-timeout: 100000
-  hystrix:
-    enabled: true
 
 hystrix:
   metrics:
     enabled: true
+#  command:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: false
 
 security:
   basic:
     enabled: false
+  user:
+    name: zhangqi
+    password: 1994
 
 author:
   name: 张琦
-
+#超时时间设置
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

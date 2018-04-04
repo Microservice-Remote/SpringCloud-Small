@@ -1,5 +1,7 @@
 package com.onion.web;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +20,11 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = { "com.onion" })
 @EnableHystrix
 public class WebApplication {
+	private static final Logger mLogger = LoggerFactory.getLogger(WebApplication.class);
+
+	static{
+		BankLoader.loader(Bank.mBankMap);
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebApplication.class, args);

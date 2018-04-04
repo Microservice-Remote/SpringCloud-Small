@@ -9,6 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -35,16 +36,28 @@ public class OkhttpConfiguration {
         builder.readTimeout(mOkhttpProperties.getReadTimeOut(), TimeUnit.MILLISECONDS)
                 .connectTimeout(mOkhttpProperties.getConnTimeOut(),TimeUnit.MILLISECONDS)
                 .writeTimeout(mOkhttpProperties.getWriteTimeOut(),TimeUnit.MILLISECONDS);
+        String interceptor = mOkhttpProperties.getInterceptor();
 
-        List<String> interceptor = mOkhttpProperties.getInterceptor();
-        for (String clazzName : interceptor) {
-            builder.addInterceptor(getInterceptor(clazzName));
+        if(interceptor != null){
+            mLogger.info("zhangqi"+interceptor);
+            List<String> interceptors = Arrays.asList(interceptor.split(","));
+            for (String clazzName : interceptors) {
+                builder.addInterceptor(getInterceptor(clazzName));
+            }
         }
 
-        List<String> netInterceptor = mOkhttpProperties.getNetInterceptor();
-        for (String clazzName : netInterceptor) {
-            builder.addNetworkInterceptor(getInterceptor(clazzName));
+
+        String netInterceptor = mOkhttpProperties.getNetInterceptor();
+        mLogger.info("zhangqi1"+interceptor);
+
+        if(netInterceptor != null){
+            List<String> netInterceptors = Arrays.asList(netInterceptor.split(","));
+
+            for (String clazzName : netInterceptors) {
+                builder.addNetworkInterceptor(getInterceptor(clazzName));
+            }
         }
+
 
         return builder.build();
     }

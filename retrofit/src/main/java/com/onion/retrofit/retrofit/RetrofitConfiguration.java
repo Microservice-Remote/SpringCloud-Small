@@ -43,9 +43,12 @@ public class RetrofitConfiguration {
          * 检测有没有自定义converterFactory
          */
         String converterFactory = mRetrofitProperties.getConverterFactory();
-        Converter.Factory factory = getConverterFactory(converterFactory);
-
-        builder.addConverterFactory(factory);
+        if(converterFactory != null){
+            Converter.Factory factory = getConverterFactory(converterFactory);
+            builder.addConverterFactory(factory);
+        }else{
+            builder.addConverterFactory(GsonConverterFactory.create());
+        }
         builder.client(mOkHttpClient);
         return builder.build();
     }
@@ -53,11 +56,6 @@ public class RetrofitConfiguration {
     private Converter.Factory getConverterFactory(String converterFactory) {
 
         Converter.Factory factory = null;
-
-        if(converterFactory == null && converterFactory.trim().equals("")){
-            factory = GsonConverterFactory.create();
-            return factory;
-        }
 
         try {
             Class<?> aClass = Class.forName(converterFactory);

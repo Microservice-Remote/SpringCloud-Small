@@ -2,8 +2,6 @@ package com.onion.retrofit.okhttp;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import java.util.List;
-
 /**
  * Created by zhangqi on 2018/2/26.
  */
@@ -16,8 +14,8 @@ public class OkhttpProperties {
     private long connTimeOut;
     private long writeTimeOut;
 
-    private List<String> netInterceptor;
-    private List<String> interceptor;
+    private String netInterceptor;
+    private String interceptor;
 
     public OkhttpProperties(){
         readTimeOut = DEFAULT_TIMEOUT;
@@ -25,19 +23,19 @@ public class OkhttpProperties {
         writeTimeOut = DEFAULT_TIMEOUT;
     }
 
-    public List<String> getNetInterceptor() {
+    public String getNetInterceptor() {
         return netInterceptor;
     }
 
-    public void setNetInterceptor(List<String> netInterceptor) {
+    public void setNetInterceptor(String netInterceptor) {
         this.netInterceptor = netInterceptor;
     }
 
-    public List<String> getInterceptor() {
+    public String getInterceptor() {
         return interceptor;
     }
 
-    public void setInterceptor(List<String> interceptor) {
+    public void setInterceptor(String interceptor) {
         this.interceptor = interceptor;
     }
 

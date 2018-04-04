@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
@@ -13,6 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @ComponentScan(basePackages = { "com.onion" })
 @MapperScan(basePackages = { "com.onion.service.user.mapper" })
 @EnableDiscoveryClient
+@EnableRedisRepositories
 @EnableAsync
 public class UserServiceApplication {
 
