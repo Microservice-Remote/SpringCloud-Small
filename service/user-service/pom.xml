@@ -10,7 +10,6 @@
 
 	<name>user-service</name>
 	<description>Demo project for Spring Boot</description>
-
 	<parent>
 		<groupId>com.onion.service</groupId>
 		<artifactId>service</artifactId>
@@ -24,6 +23,7 @@
 	</properties>
 
 	<dependencies>
+
 	</dependencies>
 
 	<build>

@@ -1,0 +1,56 @@
+spring:
+  application:
+      name: web
+  retrofit:
+    baseUrl: https://uhuishou.ronghezulin.com/loan-app/
+  okhttp:
+    connTimeOut: 11000
+#  boot:
+#    admin:
+#      url: http://localhost:8060
+#      username: zhangqi
+#      password: 1994
+#      client:
+#        name: web
+
+#    netInterceptor: com.onion.retrofit.okhttp.OkhttpProperties
+#    interceptor: com.onion.web.Interceptor.HeaderInterceptor
+server:
+  port: 8033
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhangqi:1994@localhost:8761/eureka/  #注册到eureka
+    instance:
+      prefer-ip-address: true
+
+feign:
+  httpclient:
+    connection-timeout: 100000
+
+hystrix:
+  metrics:
+    enabled: true
+#  command:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: false
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: zhangqi
+    password: 1994
+
+author:
+  name: 张琦
+#超时时间设置
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000

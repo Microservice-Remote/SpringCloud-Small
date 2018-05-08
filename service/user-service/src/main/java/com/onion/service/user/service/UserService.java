@@ -1,5 +1,6 @@
 package com.onion.service.user.service;
 
+import com.onion.pojo.HttpWrapper;
 import com.onion.pojo.user.User;
 
 /**
@@ -10,4 +11,7 @@ public interface UserService {
     String getName();
 
     User findUserById(int id);
+
+    HttpWrapper<User> register(User user,String code,String token);
+
 }

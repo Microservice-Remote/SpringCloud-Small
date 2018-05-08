@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Created by OnionMac on 2018/2/8.
  */
-@RequestMapping("friend")
 public interface FriendServiceApi {
 
-    @RequestMapping(value = "/getFriend/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "friend/getFriend/{id}",method = RequestMethod.GET)
     Friend findFriendById(@PathVariable("id") int id);
+
+    @RequestMapping(value = "friend/find/{id}",method = RequestMethod.GET)
+    String find(@PathVariable("id") int id);
 
 }
