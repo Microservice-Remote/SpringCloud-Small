@@ -28,7 +28,6 @@ public class UserController {
 
     Logger logger = LoggerFactory.getLogger(UserController.class.getName());
 
-
     @Autowired
     WebUserApi userApi;
 

@@ -12,4 +12,5 @@ public class ReturnCode {
 
     public static final int AUTHCODE_EXPIRE = 203;
     public static final int RE_REGISTER = 204;
+    public static final int PASSWORD_ERROR = 205;
 }

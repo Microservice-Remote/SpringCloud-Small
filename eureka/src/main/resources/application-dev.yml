@@ -21,3 +21,9 @@ security:
   user:
     password: 1994
     name: zhangqi
+
+#springboot 关闭应用
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false

@@ -1,7 +1,7 @@
 package com.onion.web;
 
 import com.alibaba.fastjson.JSONObject;
-import com.onion.pojo.user.User;
+import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -59,9 +59,18 @@ public class Bank implements Serializable {
     }
 
     public static void main(String[] args){
-        String http = "http://192.168.1.2:8032/image\\hh\\j.jpg";
-        User user = new User();
-        user.setPhone(http);
-        System.out.println(JSONObject.toJSONString(user));
+
+
+        String json = "{\n" +
+                "\t\"bankName\": \"111\"\n" +
+                "}";
+
+        Bank bank = JSONObject.parseObject(json, Bank.class);
+        Bank bank1 = new Gson().fromJson(json,Bank.class);
+        System.out.println(JSONObject.toJSONString(bank));
+        System.out.println(JSONObject.toJSONString(bank1));
+        System.out.println(bank.getBankLocalCode());
+        System.out.println(bank1.getBankLocalCode());
+
     }
 }

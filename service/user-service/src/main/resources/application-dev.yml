@@ -89,3 +89,9 @@ author:
 logging:
   level:
     com.onion.service.user.api.FriendApi: debug
+#springboot 关闭应用
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+

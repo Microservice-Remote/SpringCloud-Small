@@ -36,4 +36,9 @@ mybatis:
 server:
   port: 8030
 
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+
 

@@ -54,3 +54,9 @@ author:
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
+
+#springboot 关闭应用
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
