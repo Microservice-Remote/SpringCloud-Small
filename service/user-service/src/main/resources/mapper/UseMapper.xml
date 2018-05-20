@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.onion.service.user.mapper.UserMapper">
-    <resultMap id="user" type="com.onion.pojo.user.User">
-        <result column="id" property="id" />
-        <result column="createDate" property="createDate" jdbcType="TIMESTAMP"/>
-        <result column="updateDate" property="updateDate" jdbcType="TIMESTAMP"/>
-    </resultMap>
-    
-    <select id="findUserById" parameterType="int" resultType="com.onion.pojo.user.User">
-        SELECT * from user WHERE id = #{0}
+    <select id="findUserById" parameterType="int" resultMap="com.onion.mapper.user">
+        SELECT * from small_user WHERE id = #{0}
+    </select>
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id" keyColumn="id" parameterType="com.onion.pojo.user.User">
+      INSERT INTO small_user (
+        small_user.userId,
+        small_user.phone,
+        small_user.password,
+        small_user.enable,
+        small_user.createDate,
+        small_user.updateDate
+      ) VALUES (
+        #{userId},
+        #{phone},
+        #{password},
+        #{enable},
+        NOW(),
+        NOW()
+      )
+    </insert>
+    <select id="findUserByPhone" parameterType="java.lang.String" resultMap="com.onion.mapper.user">
+        SELECT * from small_user where small_user.phone = #{phone}
     </select>
 </mapper>

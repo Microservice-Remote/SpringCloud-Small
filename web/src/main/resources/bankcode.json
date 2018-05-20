@@ -1,0 +1,102 @@
+[
+  {
+    "bankCode": "ICBC",
+    "bankLocalCode": "01020000",
+    "bankName": "中国工商银行"
+  },
+  {
+    "bankCode": "ABC",
+    "bankLocalCode": "01030000",
+    "bankName": "中国农业银行"
+  },
+  {
+    "bankCode": "CMBCHINA",
+    "bankLocalCode": "03080000",
+    "bankName": "招商银行"
+  },
+  {
+    "bankCode": "CCB",
+    "bankLocalCode": "01050000",
+    "bankName": "中国建设银行"
+  },
+  {
+    "bankCode": "BOCO",
+    "bankLocalCode": "03010000",
+    "bankName": "交通银行"
+  },
+  {
+    "bankCode": "BOC",
+    "bankLocalCode": "01040000",
+    "bankName": "中国银行"
+  },
+  {
+    "bankCode": "CMBC",
+    "bankLocalCode": "03050000",
+    "bankName": "中国民生银行"
+  },
+  {
+    "bankCode": "CGB",
+    "bankLocalCode": "03060000",
+    "bankName": "广发银行"
+  },
+  {
+    "bankCode": "HXB",
+    "bankLocalCode": "03040000",
+    "bankName": "华夏银行"
+  },
+  {
+    "bankCode": "POST",
+    "bankLocalCode": "01000000",
+    "bankName": "中国邮政储蓄银行"
+  },
+  {
+    "bankCode": "ECITIC",
+    "bankLocalCode": "03020000",
+    "bankName": "中信银行"
+  },
+  {
+    "bankCode": "CEB",
+    "bankLocalCode": "03030000",
+    "bankName": "中国光大银行"
+  },
+  {
+    "bankCode": "PINGAN",
+    "bankLocalCode": "03070000",
+    "bankName": "平安银行"
+  },
+  {
+    "bankCode": "CIB",
+    "bankLocalCode": "03090000",
+    "bankName": "兴业银行"
+  },
+  {
+    "bankCode": "SPDB",
+    "bankLocalCode": "03100000",
+    "bankName": "浦发银行"
+  },
+  {
+    "bankCode": "BCCB",
+    "bankLocalCode": "04031000",
+    "bankName": "北京银行"
+  },
+  {
+    "bankCode": "BON",
+    "bankLocalCode": "04243010",
+    "bankName": "南京银行"
+  },
+  {
+    "bankCode": "NBCB",
+    "bankLocalCode": "04083320",
+    "bankName": "宁波银行"
+  },
+  {
+    "bankCode": "SHB",
+    "bankLocalCode": "04012900",
+    "bankName": "上海银行"
+  },
+  {
+    "bankCode": "CZB",
+    "bankLocalCode": "03160000",
+    "bankName": "浙商银行"
+  }
+]

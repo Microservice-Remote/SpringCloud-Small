@@ -40,7 +40,10 @@ eureka:
       defaultZone: http://zhangqi:1994@localhost:8761/eureka/  #注册到eureka
     instance:
       prefer-ip-address: true
-
+#超时时间设置
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 security:
   basic:
     enabled: false
