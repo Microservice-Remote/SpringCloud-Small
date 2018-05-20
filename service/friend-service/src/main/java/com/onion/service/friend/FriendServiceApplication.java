@@ -1,5 +1,6 @@
 package com.onion.service.friend;
 
+import com.onion.service.friend.message.ServerLauncherImpl;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,6 +10,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
+
 
 @ComponentScan(basePackages = { "com.onion" })
 @MapperScan(basePackages = { "com.onion.service.friend.mapper" })
@@ -23,7 +25,8 @@ public class FriendServiceApplication {
 		return new RestTemplate();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+
 		SpringApplication.run(FriendServiceApplication.class, args);
 	}
 }
