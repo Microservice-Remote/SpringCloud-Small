@@ -24,4 +24,8 @@
     <select id="findUserByPhone" parameterType="java.lang.String" resultMap="com.onion.mapper.user">
         SELECT * from small_user where small_user.phone = #{phone}
     </select>
+
+    <select id="findTabs" resultType="com.onion.pojo.news.Tab">
+        select * from news_type
+    </select>
 </mapper>

@@ -1,23 +1,19 @@
 package com.onion.service.user.mapper;
 
 import com.onion.pojo.news.Tab;
-import com.onion.pojo.user.User;
+import com.onion.pojo.news.TabNews;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
- * Created by OnionMac on 2018/2/6.
+ * Created by OnionMac on 2018/5/21.
  */
 @Repository
-public interface UserMapper {
-
-    User findUserById(int id);
-
-    int insertUser(User user);
-
-    User findUserByPhone(@Param("phone") String phone);
+public interface NewsMapper {
 
     List<Tab> findTabs();
+
+    List<TabNews> findTabNews(@Param("newsType") int newsType);
 }

@@ -1,7 +1,6 @@
 package com.onion.web.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.onion.pojo.City;
 import com.onion.pojo.HttpWrapper;
 import com.onion.pojo.user.Friend;
@@ -58,10 +57,16 @@ public class UserController {
         return JSONObject.toJSONString(execute.body());
     }
 
-    @HystrixCommand(fallbackMethod = "hiError") //hystrix
     @GetMapping("/getUser/{id}")
     public User getUser(@PathVariable("id") int id){
-        return userApi.findUserById(id);
+        User userById = userApi.findUserById(id);
+        if(userById != null){
+            return userById;
+        }else{
+            userById = new User();
+            userById.setUserId("100000");
+            return userById;
+        }
     }
 
     @GetMapping("/getFriend/{id}")

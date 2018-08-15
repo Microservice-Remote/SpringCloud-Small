@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.onion.mapper">
+    <resultMap id="tabNewsImage" type="com.onion.pojo.news.TabNewsImage">
+        <result column="id" property="id"/>
+        <result column="newsId" property="newsId"/>
+        <result column="imageUrl" property="imageUrl"/>
+    </resultMap>
+    <resultMap id="tabNews" type="com.onion.pojo.news.TabNews">
+        <result column="id" property="id"/>
+        <result column="newsType" property="newsType"/>
+        <result column="title" property="title"/>
+        <result column="source" property="source"/>
+        <result column="comment" property="comment"/>
+        <result column="hot" property="hot"/>
+        <result column="content" property="content"/>
+        <result column="newsShowType" property="newsShowType"/>
+        <result column="createDate" property="createDate" jdbcType="TIMESTAMP"/>
+        <result column="updateDate" property="updateDate" jdbcType="TIMESTAMP"/>
+        <collection property="tabImages" resultMap="tabNewsImage" columnPrefix="img_"/>
+    </resultMap>
+</mapper>

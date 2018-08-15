@@ -18,4 +18,5 @@ public interface UserService {
     HttpWrapper<User> register(User user);
 
     HttpWrapper<User> login(@NotNull User user);
+
 }
