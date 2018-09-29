@@ -19,8 +19,11 @@ public interface WebUserApi {
     User findUserById(@PathVariable("id") int id);
 
     @RequestMapping(value = "user/register",method = RequestMethod.POST)
-    HttpWrapper<User> register(User user,@RequestParam("code") String code,@RequestParam("token") String token);
+    HttpWrapper<User> register(User user);
 
     @RequestMapping(value = "user/sendAuthCode",method = RequestMethod.POST)
     HttpWrapper<PhoneAuthCode> sendAuthCode(@RequestParam("phone") String phone);
+
+    @RequestMapping(value = "user/login",method = RequestMethod.POST)
+    HttpWrapper<User> login(User user);
 }

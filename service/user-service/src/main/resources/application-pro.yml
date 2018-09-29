@@ -16,9 +16,9 @@ spring:
       password: zhangqi
   datasource:
       name: mydb
-      url: jdbc:mysql://127.0.0.1:3306/small?useUnicode=true&characterEncoding=UTF-8
-      username: root
-      password: 164368
+      url: jdbc:mysql://116.196.111.10:3306/small?useUnicode=true&characterEncoding=UTF-8
+      username: zhangqi
+      password: 1994
       type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver
       platform: mysql

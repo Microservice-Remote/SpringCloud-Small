@@ -1,15 +1,11 @@
 package com.onion.web.controller;
 
-import com.alibaba.fastjson.JSONObject;
-import com.onion.pojo.City;
 import com.onion.pojo.HttpWrapper;
-import com.onion.pojo.user.Friend;
-import com.onion.pojo.user.PhoneAuthCode;
 import com.onion.pojo.user.User;
-import com.onion.web.Bank;
+import com.onion.retrofit.api.annotation.Api;
 import com.onion.web.api.FriendApi;
-import com.onion.web.api.TestApi;
 import com.onion.web.api.WebUserApi;
+import com.onion.web.api.YouTuApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,52 +29,36 @@ public class UserController {
     @Autowired
     FriendApi friendApi;
 
-    @Autowired
-    TestApi mTestApi;
+
+    @Api
+    YouTuApi mYouTuApi;
+
+    @GetMapping("/test")
+    public String test(){
+
+        try {
+            Response<String> execute = mYouTuApi.getCity().execute();
+            System.out.println(execute.body());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "ok";
+    }
 
     @GetMapping("/getName")
     public String getName(){
-        return Bank.mBankMap.get("03080000");
+        return userApi.getName();
     }
+
 
     @PostMapping("/register")
-    public HttpWrapper<User> register(User user,String code,String token) {
-        return userApi.register(user,code,token);
+    public HttpWrapper<User> register(@RequestBody User user){
+        return userApi.register(user);
     }
 
-    @PostMapping("/getCode")
-    public HttpWrapper<PhoneAuthCode> getCode(String phone) {
-        return userApi.sendAuthCode(phone);
+    @PostMapping("/login")
+    public HttpWrapper<User> login(@RequestBody User user){
+        return userApi.login(user);
     }
-
-    @GetMapping("/get")
-    public String get() throws IOException {
-        Response<City> execute = mTestApi.getCity().execute();
-        return JSONObject.toJSONString(execute.body());
-    }
-
-    @GetMapping("/getUser/{id}")
-    public User getUser(@PathVariable("id") int id){
-        User userById = userApi.findUserById(id);
-        if(userById != null){
-            return userById;
-        }else{
-            userById = new User();
-            userById.setUserId("100000");
-            return userById;
-        }
-    }
-
-    @GetMapping("/getFriend/{id}")
-    public Friend getFriend(@PathVariable("id") int id){
-        return friendApi.findFriendById(id);
-    }
-
-    public User hiError(int id) {
-        User user = new User();
-        user.setId(id+11111);
-        return user;
-    }
-
 
 }

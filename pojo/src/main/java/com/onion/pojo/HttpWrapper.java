@@ -1,9 +1,11 @@
 package com.onion.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by OnionMac on 2018/3/8.
  */
-public class HttpWrapper<T> {
+public class HttpWrapper<T> implements Serializable{
 
 
     private int code;

@@ -5,7 +5,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://zhangqi:1994@localhost:8761/eureka/  #注册到eureka
+      defaultZone: http://zhangqi:1994@118.25.14.84:8761/eureka/  #注册到eureka
     instance:
       prefer-ip-address: true
 

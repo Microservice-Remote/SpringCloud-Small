@@ -6,18 +6,13 @@ import lombok.Setter;
 import java.util.Date;
 
 /**
- * Created by OnionMac on 2018/2/6.
+ * Created by zhangqi on 2018/9/28.
  */
-@Setter
 @Getter
-public class User {
+@Setter
+public class UserInfo {
     private int id;
     private String userId;
-    private String phone;
-    private String password;
-    private String token;
-    private int enable;
-    private String email;
     private Date createDate;
     private Date updateDate;
 }

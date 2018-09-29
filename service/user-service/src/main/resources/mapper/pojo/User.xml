@@ -4,6 +4,11 @@
     <resultMap id="user" type="com.onion.pojo.user.User">
         <result column="id" property="id"/>
         <result column="userId" property="userId"/>
+        <result column="phone" property="phone"/>
+        <result column="password" property="password"/>
+        <result column="enable" property="enable"/>
+        <result column="email" property="email"/>
+        <result column="token" property="token"/>
         <result column="createDate" property="createDate" jdbcType="TIMESTAMP"/>
         <result column="updateDate" property="updateDate" jdbcType="TIMESTAMP"/>
     </resultMap>
